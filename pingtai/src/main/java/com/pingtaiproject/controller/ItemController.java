@@ -19,7 +19,9 @@ public class ItemController extends BaseController {
     private ItemService itemService;
 
     //创建商品的controller
-                          public CommonReturnType createItem(@RequestParam(name = "title") String title,
+    @RequestMapping(value = "/create",method = {RequestMethod.POST})
+    @ResponseBody
+    public CommonReturnType createItem(@RequestParam(name = "title") String title,
                                        @RequestParam(name = "description") String description,
                                        @RequestParam(name = "price") BigDecimal price,
                                        @RequestParam(name = "stock") Integer stock,
